@@ -6,6 +6,6 @@ public class block : MonoBehaviour
 {
   private void OnCollisionEnter2D(Collision2D coll)
   {
-      Destroy(this.gameObject);
+      Destroy(gameObject);
   }
 }

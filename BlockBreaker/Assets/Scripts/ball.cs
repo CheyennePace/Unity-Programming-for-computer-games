@@ -7,7 +7,7 @@ public class ball : MonoBehaviour
     [SerializeField] Paddle myPaddle; 
 
     //array declaration
-    [SerlializeField] AudioClip[] ballSounds;
+    [SerializeField] AudioClip ballSounds;
 
     Vector2 paddleToBallDistance;
 
@@ -47,7 +47,7 @@ public class ball : MonoBehaviour
         //save random audio in clip
         AudioClip clip = ballSounds[randomNumber];
         //play the random clip
-        GetComponent<AudioSource>().Play().PlayOneShot(clip);
+        GetComponent<AudioSource>().PlayOneShot(clip);
     }
 
     private void LockBallToPaddle()

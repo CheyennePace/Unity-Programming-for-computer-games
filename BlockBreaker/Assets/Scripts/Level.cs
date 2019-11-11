@@ -1,32 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-   
-        [SerializeField] int breakableBlocks;
+    [SerializeField] int breakableBlocks;
 
-        SceneLoader sceneLoader;
+    SceneLoader sceneLoader;
 
-        void Start()
+    void Start()
+    {
+        sceneLoader = FindObjectOfType<SceneLoader>();
+    }
+
+    public void BlockDestroyed()
+    {
+        breakableBlocks--;
+
+        if(breakableBlocks <= 0)
         {
-            sceneLoader = FindObjectOfType<SceneLoader();
-        }
+            sceneLoader.LoadNextScene();
 
-        public void BlockDestroyed()
-        {
-            breakableBlocks--;
+        
 
-            if(breakableBlocks <= 0)
-            {
-                sceneLoader.LoadNextScene();
-            }
-            
         }
-        public void CountBreakableBlocks()
-        {
-            breakableBlocks++;
-        }
-    
+    }
+
+    public void CountBreakableBlocks()
+    {
+        breakableBlocks++;
+    }
 }

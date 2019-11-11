@@ -17,8 +17,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
-     public void Quit()
-     {
-         UnityEditor.EditorApplication.isPlaying = false;
-     }
+    public void Quit()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
+
+   
 }
